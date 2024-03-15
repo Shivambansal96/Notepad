@@ -1,10 +1,20 @@
+import React, { useState } from 'react';
+// import MDEditor from '@uiw/react-md-editor';
+import MDEditor from '@uiw/react-md-editor';
+
 
 function LandingPage() {
 
-    return(
+    const [markdownContent, setMarkdownContent] = useState('Hello Coders');
 
-        <div id="landing-screen">
-            <h1>Notepad</h1>
+    return(
+        <div className="landing-page">
+            <MDEditor value={markdownContent} onChange={setMarkdownContent} />
+            <MDEditor.Markdown  />
         </div>
+
+    
     )
 }
+
+export default LandingPage;
